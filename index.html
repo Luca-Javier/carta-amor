@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant+Garamond:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      background: rgb(107, 84, 66);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    * {
+      font-family: 'Playfair Display', serif !important;
+
+
+      font-size: 52px;
+    }
+
+
+    input {
+      width: 400px;
+      height: 40px;
+
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      background-color: transparent;
+      border-bottom: 1px solid #000;
+
+    }
+
+    input:focus {
+      outline: none;
+      border-bottom: 1px solid #000;
+    }
+
+    input::placeholder {
+      color: #d4d1d1;
+    }
+
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #d4d1d1;
+      color: #000;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Esta carta es para...</h1>
+
+
+  <input type="text" placeholder="Esa persona es..." id="nombre">
+
+  <button>Crear</button>
+
+
+
+  <script>
+
+    const input = document.getElementById('nombre');
+
+
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      const nombre = input.value;
+      window.location.href = `mensaje.html?nombre=${encodeURIComponent(nombre)}`;
+    });
+  </script>
+</body>
+
+</html>
